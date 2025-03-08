@@ -1,0 +1,64 @@
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    gap: 5%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1% 1% 1% 1%;
+    width: 500px;
+    height: 440px;
+    border-radius: 20px;
+    border: 1px solid gray;
+}
+
+.card > div:nth-child(n+13) {
+  display: none;
+}
+
+.showMoreCheckbox:checked + .card {
+    width: 500px;
+    height: 800px;
+}
+
+.showMoreCheckbox:checked + .card > .showLessButton {
+  display: flex;
+  cursor: pointer;
+  margin: auto;
+}
+
+.showMoreCheckbox:checked + .card > .showMoreButton {
+    display: none;
+}
+
+.showMoreCheckbox:checked + .card > div:nth-child(n+12) {
+  display: block;
+}
+
+.showMoreButton {
+    display: none;
+}
+
+.showLessButton {
+    display: none;
+}
+
+.showMoreCheckbox {
+    display: none;
+}
+
+.card > div:nth-child(n+12) ~ .showMoreButton {
+  display: flex;
+  cursor: pointer;
+  margin: auto;
+}
+
+.cardHeader {
+    font-size: 30px;
+}
