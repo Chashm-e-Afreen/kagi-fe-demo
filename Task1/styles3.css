@@ -1,0 +1,92 @@
+#root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    gap: 5%;
+}
+
+.showMoreCheckbox:checked + .card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1% 1% 1% 1%;
+    width: 500px;
+    height: 440px;
+    border-radius: 20px;
+    border: 1px solid gray;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1%;
+    width: 500px;
+    height: fit-content;
+    border-radius: 20px;
+    border: 1px solid gray;
+}
+
+.showMoreCheckbox:checked + .card > .showLessButton {
+  display: none;
+}
+
+.showMoreCheckbox:checked + .card > .container > .showMoreButton {
+    display: flex;
+}
+
+.showLessButton {
+  display: flex;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.showMoreCheckbox {
+    display: none;
+}
+
+.cardHeader {
+    font-size: 30px;
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+  
+  & .content {
+    height: 100%;
+  }
+}
+
+.showMoreCheckbox:checked + .card > .container > .showMoreButton {
+    width: 100%;
+    position: absolute;
+    bottom: calc(((100% - 330px) * 10));
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.showMoreCheckbox:checked + .card > .container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      max-height: 330px;
+      line-height: 30px;
+      display: flex;
+      flex-direction: column;
+ }
+
+ .showMoreButton {
+   display: none;
+ }
